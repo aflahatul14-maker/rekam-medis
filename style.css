@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f9ff; /* Biru langit sangat muda */
+    color: #0f172a;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Kiri - Tema Biru Muda */
+.sidebar {
+    width: 240px;
+    background-color: #38bdf8; /* Sky Blue */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 2px 0 10px rgba(56, 189, 248, 0.15);
+}
+
+.sidebar-brand {
+    padding: 20px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #0ea5e9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 15px 0;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+    background-color: #0284c7;
+    color: #ffffff;
+    border-left: 4px solid #e0f2fe;
+}
+
+/* Konten Utama (Sebelah Kanan Sidebar) */
+.main-wrapper {
+    margin-left: 240px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 240px);
+}
+
+/* Top Header */
+.topbar {
+    background-color: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(14, 165, 233, 0.08);
+}
+
+.topbar h1 {
+    font-size: 20px;
+    color: #0284c7;
+    font-weight: 700;
+}
+
+.badge-admin {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Area Konten */
+.content {
+    padding: 28px 32px;
+}
+
+/* 4 Kartu Statistik */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.06);
+    border-bottom: 4px solid #7dd3fc;
+}
+
+.stat-info h2 {
+    font-size: 28px;
+    color: #0284c7;
+    margin-bottom: 4px;
+}
+
+.stat-info p {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.stat-icon {
+    font-size: 36px;
+}
+
+/* Panel Putih (Akses Cepat & Tabel) */
+.panel {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 24px 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.06);
+    border-top: 4px solid #38bdf8;
+}
+
+/* Membatasi lebar panel khusus Form agar tidak full ke samping */
+.panel:has(form),
+.form-panel {
+    max-width: 680px;
+    margin: 0 auto 24px auto;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.panel-header h3 {
+    font-size: 18px;
+    color: #0284c7;
+    font-weight: 700;
+}
+
+/* Grid Tombol Akses Cepat */
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.quick-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    color: #0369a1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.quick-btn:hover {
+    background-color: #e0f2fe;
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+}
+
+/* Tombol-Tombol */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-dark {
+    background-color: #0ea5e9;
+    color: #ffffff;
+}
+
+.btn-dark:hover {
+    background-color: #0284c7;
+}
+
+.btn-primary {
+    background-color: #38bdf8;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0284c7;
+}
+
+.btn-warning {
+    background-color: #fbbf24;
+    color: #1e293b;
+    padding: 6px 12px;
+    font-size: 12.5px;
+}
+
+.btn-danger {
+    background-color: #f87171;
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 12.5px;
+}
+
+.btn-back {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    margin-bottom: 18px;
+    border: 1px solid #bae6fd;
+}
+
+.btn-back:hover {
+    background-color: #bae6fd;
+}
+
+/* Tabel Data */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table thead th {
+    background-color: #38bdf8;
+    color: #ffffff;
+    text-align: left;
+    padding: 13px 15px;
+    font-weight: 600;
+}
+
+table tbody td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #e0f2fe;
+    vertical-align: top;
+}
+
+table tbody tr:hover {
+    background-color: #f0f9ff;
+}
+
+.sub-text {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Form Input */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #0369a1;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #bae6fd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8fafc;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #bae6fd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    resize: vertical;
+    min-height: 75px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+@media (max-width: 1024px) {
+    .stats-grid, .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
